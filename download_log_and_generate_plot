@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if curl --max-time 30 172.18.8.17/log.txt > /Library/WebServer/Documents/log.txt ; then
+    /Library/WebServer/Documents/gnuplot_script
+else
+    echo "download log failed"
+fi

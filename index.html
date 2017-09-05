@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Talos Arctica - Temp/Hum</title>
+    </head>
+    <body>
+        <a href="past_logs.html">Past logs</a>
+        <center>
+        <h1>Talos Arctica - Temperature and Humidity logs</h1>
+        <iframe src="http://172.18.8.17" width="350" height="175"></iframe>
+        <br><br>
+        <script src="calendar_months.js"></script>
+        <script type="text/javascript">
+            document.write(past_month(0));
+            document.write("<div style='clear:both;'></div>");
+        </script>
+        <br>
+        <h2>Today's log</h2>
+        <img src="temp-humid.svg"/>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cp /Library/WebServer/Documents/temp-humid.svg /Library/WebServer/Documents/logs/`date +%Y-%m-%d`.svg
+
+#hour=$(date +%H)
+#minute=$(date +%M)
+#if [ hour == 23 ] && [ $minute == 59 ]; then
+#    cp /var/www/html/temp-humid.svg /var/www/html/`date +%Y-%m-%d`.svg
+#fi
+
