@@ -11,15 +11,9 @@ set xlabel "Hours"
 set timefmt "%m/%d/%Y %H:%M:%S"
 set xtics format "%H:%M"
 set ytics 0,5,100
-now = time(0) - 4 * 3600
-print(strftime("%m/%d/%Y %H:%M:%S", now))
-today = strftime("%m/%d/%Y", now)
 #print "today:    ".today
-tomorrow = strftime("%m/%d/%Y", now + 60 * 60 * 24)
 #print "tomorrow: ".tomorrow
-yesterday = strftime("%m/%d/%Y", now - 60 * 60 * 24)
 set xrange [ today : tomorrow ]
-#set xrange ["06/23/2017" :tomorrow ]
 #set xrange [yesterday : today]
 #set xrange [yesterday : tomorrow]
 set yrange [ 0 : 100 ]

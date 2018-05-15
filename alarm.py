@@ -1,18 +1,15 @@
 #!/usr/bin/env python
 import smtplib
 import time
+from gmail_data import gmail_user, gmail_passwd, recipients
 
 def avg(lst):
     return float(sum(lst)) / len(lst)
 
 
 # Email settings ---------------
-gmail_user = "albert.t.xu@gmail.com"
-gmail_passwd = ""
-recipients = ["" # email
-             ]
 subject = "Arctica - "
-message_body = ""
+message_body = "operations console: 508-856-3292"
 
 #https://stackoverflow.com/questions/101O47455/how-to-send-an-email-with-gmail-as-provider-using-python
 def send_email(user, pwd, recipient, subject, body):
@@ -40,7 +37,7 @@ def send_email(user, pwd, recipient, subject, body):
 
 
 # Alarm ---------------------
-temp_threshold = 71.0 # F
+temp_threshold = 73.0 # F
 rh_threshold = 45.0 # % humidity
 
 def thirtyMinutesPassedSinceLastAlarm():
@@ -79,7 +76,6 @@ def incrementAlarmCounter():
 
 if __name__ == '__main__':
     import datetime
-    print(datetime.datetime.now())
 
     with open("/Library/WebServer/Documents/log.txt") as logfile:
         pastMin = logfile.readlines()[-6:]
@@ -87,8 +83,8 @@ if __name__ == '__main__':
     pastMinTemps = [float(line.split(',')[1]) for line in pastMin]
     pastMinRh = [float(line.split(',')[2]) for line in pastMin]
     print(pastMinRh)
-    temp_avg = avg(pastMinTemps)
-    rh_avg = avg(pastMinRh)
+    temp_avg = avg(pastMinTemps) 
+    rh_avg = avg(pastMinRh) 
 
     tempTooHigh = temp_avg > temp_threshold
     rhTooHigh = rh_avg > rh_threshold
